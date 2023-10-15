@@ -1,0 +1,15 @@
+{
+	"SourceFiles": [
+		"C:\\UnrealProjects\\AgencyChronicles\\AgencyChronicles\\Source\\AgencyChronicles\\AgencyChronicles.Build.cs",
+		"C:\\UnrealProjects\\AgencyChronicles\\AgencyChronicles\\Plugins\\Developer\\RiderLink\\Source\\RD\\RD.Build.cs",
+		"C:\\UnrealProjects\\AgencyChronicles\\AgencyChronicles\\Plugins\\Developer\\RiderLink\\Source\\RiderBlueprint\\RiderBlueprint.Build.cs",
+		"C:\\UnrealProjects\\AgencyChronicles\\AgencyChronicles\\Plugins\\Developer\\RiderLink\\Source\\RiderGameControl\\RiderGameControl.Build.cs",
+		"C:\\UnrealProjects\\AgencyChronicles\\AgencyChronicles\\Plugins\\Developer\\RiderLink\\Source\\RiderLC\\RiderLC.Build.cs",
+		"C:\\UnrealProjects\\AgencyChronicles\\AgencyChronicles\\Plugins\\Developer\\RiderLink\\Source\\RiderLink\\RiderLink.Build.cs",
+		"C:\\UnrealProjects\\AgencyChronicles\\AgencyChronicles\\Plugins\\Developer\\RiderLink\\Source\\RiderLogging\\RiderLogging.Build.cs",
+		"C:\\UnrealProjects\\AgencyChronicles\\AgencyChronicles\\Plugins\\Developer\\RiderLink\\Source\\RiderShaderInfo\\RiderShaderInfo.Build.cs",
+		"C:\\UnrealProjects\\AgencyChronicles\\AgencyChronicles\\Source\\AgencyChronicles.Target.cs",
+		"C:\\UnrealProjects\\AgencyChronicles\\AgencyChronicles\\Source\\AgencyChroniclesEditor.Target.cs"
+	],
+	"EngineVersion": "5.3.1"
+}

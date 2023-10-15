@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-AgencyChronicles.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\UnrealProjects\AgencyChronicles\AgencyChronicles\Intermediate\Build\Win64\x64\AgencyChroniclesEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.obj"
+"C:\UnrealProjects\AgencyChronicles\AgencyChronicles\Intermediate\Build\Win64\x64\UnrealEditor\Development\AgencyChronicles\AgencyChronicles.cpp.obj"
+"C:\UnrealProjects\AgencyChronicles\AgencyChronicles\Intermediate\Build\Win64\x64\UnrealEditor\Development\AgencyChronicles\Default.rc2.res"
+/OUT:"C:\UnrealProjects\AgencyChronicles\AgencyChronicles\Intermediate\Build\Win64\x64\UnrealEditor\Development\AgencyChronicles\UnrealEditor-AgencyChronicles.lib"
