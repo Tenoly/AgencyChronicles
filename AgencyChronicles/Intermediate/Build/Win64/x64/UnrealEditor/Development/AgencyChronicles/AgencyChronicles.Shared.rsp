@@ -1,4 +1,5 @@
 /I "."
+/I "C:\UnrealProjects\AgencyChronicles\AgencyChronicles\Intermediate\Build\Win64\UnrealEditor\Inc\AgencyChronicles\UHT"
 /I "C:\UnrealProjects\AgencyChronicles\AgencyChronicles\Source"
 /I "Runtime\Core\Public"
 /I "Runtime\Core\Internal"
@@ -257,6 +258,8 @@
 /I "Developer\PhysicsUtilities\Public"
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\WidgetRegistration\UHT"
 /I "Developer\WidgetRegistration\Public"
+/I "..\Plugins\EnhancedInput\Intermediate\Build\Win64\UnrealEditor\Inc\EnhancedInput\UHT"
+/I "..\Plugins\EnhancedInput\Source\EnhancedInput\Public"
 /external:W0
 /external:I "ThirdParty\mimalloc\include"
 /external:I "ThirdParty\LibTiff\Source\Win64"

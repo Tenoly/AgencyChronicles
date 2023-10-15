@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\unrealprojects\\agencychronicles\\agencychronicles\\intermediate\\build\\win64\\unrealeditor\\inc\\agencychronicles\\uht\\gmgameplay.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\unrealprojects\\agencychronicles\\agencychronicles\\intermediate\\build\\win64\\x64\\agencychronicleseditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "c:\\unrealprojects\\agencychronicles\\agencychronicles\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\agencychronicles\\definitions.agencychronicles.h",
+            "c:\\unrealprojects\\agencychronicles\\agencychronicles\\source\\agencychronicles\\gameplay\\gmgameplay.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\serverstatreplicator.generated.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemodebase.generated.h",
+            "c:\\unrealprojects\\agencychronicles\\agencychronicles\\intermediate\\build\\win64\\unrealeditor\\inc\\agencychronicles\\uht\\gmgameplay.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
