@@ -12,6 +12,9 @@ public:
 	AACCharacter();
 	virtual void Tick(float DeltaTime) override;
 
+	UFUNCTION(BlueprintCallable)
+	void SetMaxWalkingSpeed(float speed);
+
 protected:
 	virtual void BeginPlay() override;
 };

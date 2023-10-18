@@ -4,6 +4,7 @@
 #include "EnhancedInputComponent.h"
 #include "InputAction.h"
 #include "InputMappingContext.h"
+#include "AgencyChronicles/Gameplay/3C/Character/ACCharacter.h"
 #include "GameFramework/PlayerController.h"
 #include "PCInGame.generated.h"
 
@@ -40,13 +41,24 @@ UCLASS()
 class AGENCYCHRONICLES_API APCInGame : public APlayerController {
 	GENERATED_BODY()
 
+public:
+	UFUNCTION(BlueprintCallable)
+	AACCharacter* GetACCharacter() const;
+	
 protected:
 	virtual void BeginPlay() override;
 	virtual void SetupInputComponent() override;
-	void BindInput(EInputActionType type, FEnhancedInputActionHandlerSignature::TMethodPtr<APCInGame, const FInputActionInstance&>
-	               callback, ETriggerEvent triggerEvent = ETriggerEvent::Triggered);
+	void TryBindInput(	EInputActionType type, FEnhancedInputActionHandlerSignature::TMethodPtr<APCInGame,
+					const FInputActionInstance&> callback, ETriggerEvent triggerEvent = ETriggerEvent::Triggered);
 
 	void Move(const FInputActionInstance& inputActionInstance);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void StartRunning(const FInputActionInstance& inputActionInstance);
+	UFUNCTION(BlueprintImplementableEvent)
+	void StopRunning(const FInputActionInstance& inputActionInstance);
+	
+	
 	void OnMenuClosed();
 
 

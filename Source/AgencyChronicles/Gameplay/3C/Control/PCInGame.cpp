@@ -8,6 +8,10 @@
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
 
+AACCharacter* APCInGame::GetACCharacter() const {
+	return Cast<AACCharacter>(GetPawn());
+}
+
 void APCInGame::BeginPlay() {
 	Super::BeginPlay();
 
@@ -17,10 +21,12 @@ void APCInGame::BeginPlay() {
 void APCInGame::SetupInputComponent() {
 	Super::SetupInputComponent();
 
-	BindInput(IAT_Moving, &APCInGame::Move);
+	TryBindInput(IAT_Moving, &APCInGame::Move);
+	TryBindInput(IAT_ToggleRunning, &APCInGame::StartRunning);
+	TryBindInput(IAT_ToggleRunning, &APCInGame::StopRunning, ETriggerEvent::Completed);
 }
 
-void APCInGame::BindInput(EInputActionType type, FEnhancedInputActionHandlerSignature::TMethodPtr<APCInGame, const FInputActionInstance&> callback, ETriggerEvent triggerEvent) {
+void APCInGame::TryBindInput(EInputActionType type, FEnhancedInputActionHandlerSignature::TMethodPtr<APCInGame, const FInputActionInstance&> callback, ETriggerEvent triggerEvent) {
 	if (UEnhancedInputComponent* inputComponent = Cast<UEnhancedInputComponent>(InputComponent)) {
 		if (UInputAction* inputAction = Inputs.FindRef(type)) {
 			inputComponent->BindAction(inputAction, triggerEvent, this, callback);
