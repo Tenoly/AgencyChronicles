@@ -3,8 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "AgencyChronicles/InGame/3C/Character/ACCharacter.h"
-#include "AgencyChronicles/InGame/3C/Character/ACPlayerState.h"
+#include "AgencyChronicles/3C/Character/ACCharacter.h"
+#include "AgencyChronicles/3C/Character/ACPlayerState.h"
 #include "GameFramework/SaveGame.h"
 #include "Save.generated.h"
 

@@ -3,9 +3,9 @@
 
 #include "SavePrompt.h"
 
-#include "AgencyChronicles/MainMenu/SaveSystem/ACGameInstance.h"
 #include "AgencyChronicles/Misc/Utils/StaticsUtils.h"
 #include "AgencyChronicles/Misc/Utils/UIUtils.h"
+#include "AgencyChronicles/SaveSystem/ACGameInstance.h"
 #include "Components/Button.h"
 #include "Components/EditableTextBox.h"
 #include "Components/ScrollBox.h"
@@ -14,6 +14,21 @@
 #include "Kismet/BlueprintPathsLibrary.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetTextLibrary.h"
+
+void USavePrompt::SetType(ESaveOrLoadType type) {
+	Type = type;
+
+	if (Type == SLT_Save) {
+		Title->SetText(SaveTitle);
+		ErrorText->SetText(SaveErrorText);
+		ValidationText->SetText(SaveButtonText);
+	}
+	else {
+		Title->SetText(LoadTitle);
+		ErrorText->SetText(LoadErrorText);
+		ValidationText->SetText(LoadButtonText);
+	}
+}
 
 void USavePrompt::NativeConstruct()
 {
@@ -32,13 +47,13 @@ void USavePrompt::NativeConstruct()
 		}
 	}
 
-	SaveButton->OnClicked.AddDynamic(this, &USavePrompt::OnValidateButtonClicked);
+	ValidationButton->OnClicked.AddDynamic(this, &USavePrompt::OnValidateButtonClicked);
 	CancelButton->OnClicked.AddDynamic(this, &USavePrompt::OnCancelButtonClicked);
 }
 
 void USavePrompt::NativeDestruct() {
 	Super::NativeDestruct();
-	SaveButton->OnClicked.RemoveDynamic(this, &USavePrompt::OnValidateButtonClicked);
+	ValidationButton->OnClicked.RemoveDynamic(this, &USavePrompt::OnValidateButtonClicked);
 	CancelButton->OnClicked.RemoveDynamic(this, &USavePrompt::OnCancelButtonClicked);
 }
 

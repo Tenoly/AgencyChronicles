@@ -4,7 +4,7 @@
 #include "EnhancedInputComponent.h"
 #include "InputAction.h"
 #include "InputMappingContext.h"
-#include "AgencyChronicles/InGame/3C/Character/ACCharacter.h"
+#include "AgencyChronicles/3C/Character/ACCharacter.h"
 #include "GameFramework/PlayerController.h"
 #include "PCInGame.generated.h"
 

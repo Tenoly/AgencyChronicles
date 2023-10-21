@@ -27,29 +27,33 @@ class AGENCYCHRONICLES_API USavePrompt : public UUserWidget {
 	GENERATED_BODY()
 
 public:
-	void SetType(ESaveOrLoadType type) { Type = type; }
-
-	UFUNCTION(BlueprintCallable, Category = "Type")
+	void SetType(ESaveOrLoadType type);
 	TEnumAsByte<ESaveOrLoadType> GetType() const { return Type; }
 
 protected:
 	virtual void NativeConstruct() override;
 	virtual void NativeDestruct() override;
 
-	UFUNCTION(BlueprintCallable)
-	void OnValidateButtonClicked();
-
-	UFUNCTION(BlueprintCallable)
-	void OnCancelButtonClicked();
+	UFUNCTION()	void OnValidateButtonClicked();
+	UFUNCTION()	void OnCancelButtonClicked();
 
 	UPROPERTY(meta=(BindWidget)) TObjectPtr<UScrollBox> SaveEntryList;
+	UPROPERTY(meta=(BindWidget)) TObjectPtr<UTextBlock> Title;
 	UPROPERTY(meta=(BindWidget)) TObjectPtr<UEditableTextBox> PromptText;
 	UPROPERTY(meta=(BindWidget)) TObjectPtr<UTextBlock> ErrorText;
-	UPROPERTY(meta=(BindWidget)) TObjectPtr<UButton> SaveButton;
+	UPROPERTY(meta=(BindWidget)) TObjectPtr<UButton> ValidationButton;
+	UPROPERTY(meta=(BindWidget)) TObjectPtr<UTextBlock> ValidationText;
 	UPROPERTY(meta=(BindWidget)) TObjectPtr<UButton> CancelButton;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Sub Widget Classes")
 	TSubclassOf<USaveEntry> SaveEntryClass;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Texts") FText SaveTitle;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Texts") FText LoadTitle;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Texts") FText SaveButtonText;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Texts") FText LoadButtonText;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Texts") FText SaveErrorText;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Texts") FText LoadErrorText;
 
 private:
 	void OnNewSaveSelected(USaveEntry* saveEntry);

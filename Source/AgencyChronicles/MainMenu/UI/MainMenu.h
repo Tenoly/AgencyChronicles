@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "AgencyChronicles/MainMenu/SaveSystem/UI/SavePrompt.h"
+#include "AgencyChronicles/SaveSystem/UI/SavePrompt.h"
 #include "Blueprint/UserWidget.h"
 #include "MainMenu.generated.h"
 
@@ -21,6 +21,7 @@ protected:
 
 	UFUNCTION()	void NewGame();
 	UFUNCTION() void CreateLoadPromptWindow();
+	UFUNCTION() void Quit();
 
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<USavePrompt> SavePromptClass;

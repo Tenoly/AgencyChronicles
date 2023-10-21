@@ -3,9 +3,9 @@
 
 #include "StaticsUtils.h"
 
-#include "AgencyChronicles/InGame/3C/Character/ACCharacter.h"
-#include "AgencyChronicles/InGame/3C/Character/ACPlayerState.h"
-#include "AgencyChronicles/MainMenu/SaveSystem/ACGameInstance.h"
+#include "AgencyChronicles/3C/Character/ACCharacter.h"
+#include "AgencyChronicles/3C/Character/ACPlayerState.h"
+#include "AgencyChronicles/SaveSystem/ACGameInstance.h"
 #include "Kismet/GameplayStatics.h"
 
 UACGameInstance* UStaticsUtils::GetACGameInstance(const UObject* worldContext) {
