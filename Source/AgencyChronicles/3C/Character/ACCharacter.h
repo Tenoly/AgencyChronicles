@@ -22,9 +22,10 @@ public:
 	FCharacterSaveData GetSaveData() const;
 #pragma endregion
 
-	UFUNCTION(BlueprintCallable)
-	void SetMaxWalkingSpeed(float speed);
+	UFUNCTION(BlueprintCallable) void SetMaxWalkingSpeed(float speed);
 
+	FVector GetFeetLocation() const;
+	
 protected:
 	virtual void BeginPlay() override;
 };

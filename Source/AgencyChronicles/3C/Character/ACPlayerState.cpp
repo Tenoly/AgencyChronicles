@@ -1,6 +1,5 @@
 #include "ACPlayerState.h"
 
-#include "AgencyChronicles/Inventory/InventoryComponent.h"
 #include "AgencyChronicles/Misc/Utils/StaticsUtils.h"
 #include "AgencyChronicles/SaveSystem/ACGameInstance.h"
 #include "AgencyChronicles/SaveSystem/Save.h"

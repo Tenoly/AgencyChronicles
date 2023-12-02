@@ -24,7 +24,7 @@ class AGENCYCHRONICLES_API UInventoryComponent : public UActorComponent {
 
 public:
 	UInventoryComponent();
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	virtual void TickComponent(float deltaTime, ELevelTick tickType, FActorComponentTickFunction* thisTickFunction) override;
 
 	void AddItemToInventory(UCollectableItemData* item, int amount);
 	

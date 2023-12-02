@@ -1,7 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "AgencyChronicles/Inventory/InventoryComponent.h"
+#include "AgencyChronicles/Items & Inventory/InventoryComponent.h"
 #include "AgencyChronicles/Story/StoryManager.h"
 #include "GameFramework/PlayerState.h"
 #include "ACPlayerState.generated.h"
@@ -9,6 +9,7 @@
 USTRUCT()
 struct FPlayerStateSaveData {
 	GENERATED_BODY()
+	
 	FStoryManagerSaveData StoryManager;
 	FInventory Inventory;
 };

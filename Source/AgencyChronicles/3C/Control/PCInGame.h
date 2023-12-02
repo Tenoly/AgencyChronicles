@@ -42,8 +42,7 @@ class AGENCYCHRONICLES_API APCInGame : public APlayerController {
 	GENERATED_BODY()
 
 public:
-	UFUNCTION(BlueprintCallable)
-	AACCharacter* GetACCharacter() const;
+	UFUNCTION(BlueprintCallable) AACCharacter* GetACCharacter() const;
 	
 protected:
 	virtual void BeginPlay() override;
@@ -58,13 +57,22 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent)
 	void StopRunning(const FInputActionInstance& inputActionInstance);
 	
-	
 	void OnMenuClosed();
 
-
+	void CastForInteractableObject();
+	AActor* PickBestFocusCandidate(TArray<AActor*> candidates, FVector start);
+	
 	UPROPERTY(EditDefaultsOnly, Category = "Inputs")
 	TMap<TEnumAsByte<EInputActionType>, UInputAction*> Inputs;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Inputs")
 	TMap<TEnumAsByte<EInputMappingContextType>, UInputMappingContext*> MappingContexts;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Interaction")
+	float InteractionDetectionRadius = 150.f;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Interaction")
+	float InteractionDetectionAngle = 45.f;
+
+	UPROPERTY() TObjectPtr<AActor> CurrentFocusedInteractable = nullptr;
 };

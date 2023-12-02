@@ -3,6 +3,7 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "InputAction.h"
+#include "AgencyChronicles/Misc/Interfaces/Interactable.h"
 #include "AgencyChronicles/Misc/Utils/MathUtils.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
@@ -61,4 +62,47 @@ void APCInGame::OnMenuClosed()
 	}
 
 	SetPause(false);
+}
+
+void APCInGame::CastForInteractableObject() {
+	TArray<FHitResult> hits;
+	FVector start = GetACCharacter()->GetFeetLocation();
+	GetWorld()->SweepMultiByChannel(hits, start, start, FQuat::Identity, ECC_Visibility, FCollisionShape::MakeSphere(InteractionDetectionRadius));
+
+	TArray<AActor*> newHitActors;
+	for (FHitResult hit : hits) {
+		AActor* hitActor = hit.GetActor();
+		if (hitActor && hitActor->Implements<UInteractable>()) {
+			newHitActors.AddUnique(hitActor);
+		}
+	}
+	AActor* candidate = PickBestFocusCandidate(newHitActors, start);
+
+	if (CurrentFocusedInteractable == candidate)
+		return;
+	
+	if (CurrentFocusedInteractable)
+		IInteractable::Execute_OnFocusEnd(CurrentFocusedInteractable);
+
+	CurrentFocusedInteractable = candidate;
+
+	if (CurrentFocusedInteractable)
+		IInteractable::Execute_OnFocusStart(CurrentFocusedInteractable);
+}
+
+AActor* APCInGame::PickBestFocusCandidate(TArray<AActor*> candidates, FVector start) {
+	if (candidates.IsEmpty())
+		return nullptr;
+
+	AActor* candidate = nullptr;
+	float min = TNumericLimits<float>::Max();
+	for (AActor* actor : candidates) {
+		const float dist = (actor->GetActorLocation() - start).SquaredLength();
+		if (dist < min) {
+			min = dist;
+			candidate = actor;
+		}
+	}
+
+	return candidate;
 }

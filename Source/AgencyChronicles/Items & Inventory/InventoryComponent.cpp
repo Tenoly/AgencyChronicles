@@ -8,8 +8,8 @@ UInventoryComponent::UInventoryComponent() {
 	PrimaryComponentTick.bCanEverTick = true;
 }
 
-void UInventoryComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) {
-	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+void UInventoryComponent::TickComponent(float deltaTime, ELevelTick tickType, FActorComponentTickFunction* thisTickFunction) {
+	Super::TickComponent(deltaTime, tickType, thisTickFunction);
 }
 
 void UInventoryComponent::AddItemToInventory(UCollectableItemData* item, int amount) {
