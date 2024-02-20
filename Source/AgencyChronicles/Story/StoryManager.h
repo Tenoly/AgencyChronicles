@@ -25,10 +25,8 @@ public:
 	UStoryManager();
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	
-	void SetCurrentCaseFromData(UCaseData* data);
-	
+	UFUNCTION(BlueprintCallable) void SetCurrentCaseFromData(UCaseData* data);
 	void SetCurrentCaseFromSave(FCaseSaveData saveData);
-	
 	void SetCurrentCase(UCase* newCase);
 	
 	UCase* GetCurrentCase() const;
@@ -43,6 +41,5 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
-	UPROPERTY()
-	TObjectPtr<UCase> CurrentCase = nullptr;	
+	UPROPERTY()	TObjectPtr<UCase> CurrentCase = nullptr;	
 };

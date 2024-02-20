@@ -13,7 +13,7 @@ class AGENCYCHRONICLES_API IInteractable {
 	GENERATED_BODY()
 
 public:
-	UFUNCTION(BlueprintNativeEvent)	virtual void OnFocusStart();
-	UFUNCTION(BlueprintNativeEvent)	virtual void OnFocusEnd();
-	UFUNCTION(BlueprintNativeEvent)	virtual void OnInteraction();
+	UFUNCTION(BlueprintNativeEvent)	void OnFocusStart();
+	UFUNCTION(BlueprintNativeEvent)	void OnFocusEnd();
+	UFUNCTION(BlueprintNativeEvent)	void OnInteraction();
 };

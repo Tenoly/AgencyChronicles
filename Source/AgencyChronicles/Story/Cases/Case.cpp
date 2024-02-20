@@ -16,6 +16,20 @@ void UCase::CreateClueInfo(UCaseClueData* clue) {
 	}
 }
 
+TArray<UCaseClueData*> UCase::GetCluesToDisplay() {
+	TArray<UCaseClueData*> clues;
+	CluesInfo.GetKeys(clues);
+
+	for (int i = 0; i < clues.Num(); ++i) {
+		if (CluesInfo.FindRef(clues[i]).Found) continue;
+
+		clues.RemoveAt(i);
+		--i;
+	}
+
+	return clues;
+}
+
 void UCase::LoadFromSaveData(const FCaseSaveData& saveData) {
 	Data = saveData.Data;
 	CluesInfo = saveData.CluesInfo;

@@ -3,8 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "AgencyChronicles/UI/MainMenu/MainMenu.h"
 #include "GameFramework/GameModeBase.h"
-#include "UI/MainMenu.h"
 #include "GMMainMenu.generated.h"
 
 /**

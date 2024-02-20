@@ -37,6 +37,7 @@ class AGENCYCHRONICLES_API UCase : public UObject {
 	
 public:
 	void CreateClueInfo(UCaseClueData* clue);
+	TArray<UCaseClueData*> GetCluesToDisplay();
 	
 #pragma region Save
 	void LoadFromSaveData(const FCaseSaveData& saveData);

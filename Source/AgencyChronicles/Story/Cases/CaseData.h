@@ -15,6 +15,7 @@ class AGENCYCHRONICLES_API UCaseData : public UPrimaryDataAsset {
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditDefaultsOnly, Category = "Clues")
-	TArray<TObjectPtr<UCaseClueData>> RootClues;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly) int32 CaseID = -1;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly) FText DisplayName;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Clues")	TArray<TObjectPtr<UCaseClueData>> RootClues;
 };

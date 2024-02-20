@@ -29,15 +29,15 @@ void ACollectableItem::OnConstruction(const FTransform& transform) {
 }
 
 #pragma region Interactable
-void ACollectableItem::OnFocusStart() {
+void ACollectableItem::OnFocusStart_Implementation() {
 	Widget->SetVisibility(true, true);
 }
 
-void ACollectableItem::OnFocusEnd() {
+void ACollectableItem::OnFocusEnd_Implementation() {
 	Widget->SetVisibility(false, true);
 }
 
-void ACollectableItem::OnInteraction() {
+void ACollectableItem::OnInteraction_Implementation() {
 	Collect();
 }
 #pragma endregion

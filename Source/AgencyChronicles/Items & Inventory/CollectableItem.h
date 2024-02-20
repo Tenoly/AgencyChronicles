@@ -18,9 +18,9 @@ public:
 	virtual void OnConstruction(const FTransform& transform) override;
 
 #pragma region Interactable
-	virtual void OnFocusStart() override;
-	virtual void OnFocusEnd() override;
-	virtual void OnInteraction() override;
+	void OnFocusStart_Implementation() override;
+	void OnFocusEnd_Implementation() override;
+	void OnInteraction_Implementation() override;
 #pragma endregion
 
 	UPROPERTY()	TObjectPtr<UStaticMeshComponent> Mesh = nullptr;

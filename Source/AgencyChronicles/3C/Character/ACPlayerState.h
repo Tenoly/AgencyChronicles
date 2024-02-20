@@ -26,8 +26,8 @@ public:
 	FPlayerStateSaveData GetSaveData() const;
 #pragma endregion
 
-	UPROPERTY()	TObjectPtr<UStoryManager> StoryManager;
-	UPROPERTY() TObjectPtr<UInventoryComponent> InventoryComponent;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)	TObjectPtr<UStoryManager> StoryManager;
+	UPROPERTY(EditDefaultsOnly) TObjectPtr<UInventoryComponent> InventoryComponent;
 
 protected:
 	virtual void BeginPlay() override;
