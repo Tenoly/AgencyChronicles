@@ -1,3 +1,6 @@
+## Disclaimer
+This project is a hobby, lots of idea but not much time invested.
+
 # AgencyChronicles
 Investigation game based around the ability to play different investigators.
 
