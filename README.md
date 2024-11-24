@@ -10,12 +10,12 @@ Something not very guided, non-linear.
 I wanted each case and clue to be solvable or obtainable in several ways. Playing as an agency with a few detectives allows players to choose how they want to approach each case.
 
 ## Keep it real
-We don't want to give too many hints to the player that would not feel natural (excessive UI, highlighting objects, map objectives...). We want to challenge the player on their understanding of the world around.
-But we still need those hints in last resort.
+We don't want to give too many hints to the player that would not feel natural (excessive UI, highlighting objects, map objectives...). We want to challenge the player on their understanding of the world around them.
+But we still need those hints as a last resort.
 
 # State of the project
 - case/clue system
 - notebook UI
-!(/Resources/SC_Notebook.png)
+![Player notebook](/Resources/SC_Notebook.png)
 - tutorial case map blokcout
-!(Resources/SC_Blockout.png)
+![Tutorial map blockout](Resources/SC_Blockout.png)
