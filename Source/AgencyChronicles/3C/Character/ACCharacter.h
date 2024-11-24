@@ -11,9 +11,11 @@ USTRUCT(BlueprintType)
 struct FCameraTransform {
 	GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere) float ArmLength = 500.f;
-	UPROPERTY(EditAnywhere) FVector SocketOffset = FVector(0.f, 0.f, 500.f);
-	UPROPERTY(EditAnywhere) FRotator CameraRotation = FRotator(-45.f, 0.f, 0.f);
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) float ArmLength = 500.f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) FVector SocketOffset = FVector(0.f, 0.f, 500.f);
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) float Roll = 0.f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) float Pitch = -45.f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) float Yaw = 0.f;
 };
 
 USTRUCT()
@@ -35,7 +37,8 @@ public:
 #pragma endregion
 
 	UFUNCTION(BlueprintCallable) void SetMaxWalkingSpeed(float speed);
-	void SetCameraTransform(FCameraTransform cameraTransform);
+	UFUNCTION(BlueprintCallable) void SetCameraTransform(FCameraTransform cameraTransform);
+	UFUNCTION(BlueprintCallable) void ResetCameraTransform();
 
 	FVector GetFeetLocation() const;
 	

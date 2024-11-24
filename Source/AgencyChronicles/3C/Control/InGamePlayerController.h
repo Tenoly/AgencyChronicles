@@ -49,6 +49,7 @@ protected:
 					const FInputActionInstance&> callback, ETriggerEvent triggerEvent = ETriggerEvent::Triggered);
 
 	void Move(const FInputActionInstance& inputActionInstance);
+	void Look(const FInputActionInstance& inputActionInstance);
 	void TogglePauseMenu(const FInputActionInstance& inputActionInstance);
 	void ToggleNotebookMenu(const FInputActionInstance& inputActionInstance);
 	UFUNCTION(BlueprintImplementableEvent) void StartRunning(const FInputActionInstance& inputActionInstance);

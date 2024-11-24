@@ -22,6 +22,7 @@ void AInGamePlayerController::SetupInputComponent() {
 	Super::SetupInputComponent();
 
 	TryBindInput(IAT_Moving, &AInGamePlayerController::Move);
+	TryBindInput(IAT_Looking, &AInGamePlayerController::Look);
 	TryBindInput(IAT_ToggleRunning, &AInGamePlayerController::StartRunning);
 	TryBindInput(IAT_ToggleRunning, &AInGamePlayerController::StopRunning, ETriggerEvent::Completed);
 	TryBindInput(IAT_OpenPauseMenu, &AInGamePlayerController::TogglePauseMenu);
@@ -36,14 +37,21 @@ void AInGamePlayerController::TryBindInput(EInputActionType type, FEnhancedInput
 	}
 }
 
-void AInGamePlayerController::Move(const FInputActionInstance& instance) {
-	const FVector2D axisValue = instance.GetValue().Get<FVector2D>();
+void AInGamePlayerController::Move(const FInputActionInstance& inputActionInstance) {
+	const FVector2D axisValue = inputActionInstance.GetValue().Get<FVector2D>();
 
 	const FVector forwardDirection = UMathUtils::ClearZAndNormalize(UKismetMathLibrary::GetForwardVector(UGameplayStatics::GetPlayerCameraManager(this, 0)->GetCameraRotation()));
 	GetPawn()->AddMovementInput(forwardDirection, axisValue.X);
 
 	const FVector rightDirection = UMathUtils::ClearZAndNormalize(UKismetMathLibrary::GetRightVector(UGameplayStatics::GetPlayerCameraManager(this, 0)->GetCameraRotation()));
 	GetPawn()->AddMovementInput(rightDirection, axisValue.Y);
+}
+
+void AInGamePlayerController::Look(const FInputActionInstance& inputActionInstance) {
+	const FVector2D axisValue = inputActionInstance.GetValue().Get<FVector2D>();
+
+	AddYawInput(axisValue.X);
+	AddPitchInput(axisValue.Y);
 }
 
 void AInGamePlayerController::TogglePauseMenu(const FInputActionInstance& inputActionInstance) {

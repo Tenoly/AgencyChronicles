@@ -29,7 +29,15 @@ void AACCharacter::SetMaxWalkingSpeed(float speed) {
 void AACCharacter::SetCameraTransform(FCameraTransform cameraTransform) {
 	SpringArm->TargetArmLength = cameraTransform.ArmLength;
 	SpringArm->SocketOffset = cameraTransform.SocketOffset;
-	Camera->SetRelativeRotation(cameraTransform.CameraRotation);
+	SpringArm->SetRelativeRotation(FRotator(0.f, cameraTransform.Yaw, 0.f));
+	Camera->SetRelativeRotation(FRotator(cameraTransform.Pitch, 0.f, cameraTransform.Roll));
+}
+
+void AACCharacter::ResetCameraTransform() {
+	SpringArm->TargetArmLength = DefaultCameraTransform.ArmLength;
+	SpringArm->SocketOffset = DefaultCameraTransform.SocketOffset;
+	SpringArm->SetRelativeRotation(FRotator(0.f, DefaultCameraTransform.Yaw, 0.f));
+	Camera->SetRelativeRotation(FRotator(DefaultCameraTransform.Pitch, 0.f, DefaultCameraTransform.Roll));
 }
 
 FVector AACCharacter::GetFeetLocation() const {
@@ -38,6 +46,4 @@ FVector AACCharacter::GetFeetLocation() const {
 
 void AACCharacter::BeginPlay() {
 	Super::BeginPlay();
-
-	SetCameraTransform(DefaultCameraTransform);
 }
