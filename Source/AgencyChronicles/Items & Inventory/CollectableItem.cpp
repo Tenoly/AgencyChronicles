@@ -47,6 +47,6 @@ void ACollectableItem::BeginPlay() {
 }
 
 void ACollectableItem::Collect() {
-	UStaticsUtils::GetACPlayerState(this)->InventoryComponent->AddItemToInventory(Data, 1);
+	UStaticsUtils::GetACPlayerState(this)->InventoryComponent->AddItemToInventory(Data, Amount);
 	Destroy();
 }

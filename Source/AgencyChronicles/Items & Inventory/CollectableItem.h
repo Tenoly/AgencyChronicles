@@ -26,6 +26,7 @@ public:
 	UPROPERTY()	TObjectPtr<UStaticMeshComponent> Mesh = nullptr;
 	UPROPERTY()	TObjectPtr<UWidgetComponent> Widget = nullptr;
 	UPROPERTY()	TObjectPtr<UCollectableItemData> Data = nullptr;
+	UPROPERTY()	int32 Amount = 1;
 
 protected:
 	virtual void BeginPlay() override;
